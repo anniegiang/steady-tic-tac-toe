@@ -67,6 +67,14 @@ class Game extends React.Component {
     });
   }
 
+  handlePlayAgain() {
+    this.setState({
+      history: [{ squares: Array(9).fill(null) }],
+      xIsNext: true,
+      stepNumber: 0,
+    });
+  }
+
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
@@ -100,6 +108,14 @@ class Game extends React.Component {
         <div className="game-info">
           <div className={winner ? "winner-status" : ""}>{status}</div>
           <ol>{moves}</ol>
+          {winner && (
+            <button
+              onClick={() => this.handlePlayAgain()}
+              className="play-again"
+            >
+              Play again
+            </button>
+          )}
         </div>
       </div>
     );

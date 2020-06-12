@@ -51,7 +51,8 @@ ul {
   margin-left: 20px;
 }
 
-.move-button {
+.move-button,
+.play-again {
   cursor: pointer;
 }
 
