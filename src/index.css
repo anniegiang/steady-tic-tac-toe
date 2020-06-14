@@ -1,6 +1,6 @@
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
+  margin: 60px;
 }
 
 ol,
@@ -25,12 +25,12 @@ ul {
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
-  height: 34px;
+  height: 100px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 100px;
   cursor: pointer;
 }
 
@@ -45,17 +45,29 @@ ul {
 .game {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .game-info {
-  margin-left: 20px;
+  margin-left: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.move {
+  margin-bottom: 10px;
 }
 
 .move-button,
 .new-game {
+  border: 1px solid cornflowerblue;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: rgb(71, 70, 70);
   cursor: pointer;
 }
 
 .winner-status {
-  color: red;
+  color: cornflowerblue;
 }
