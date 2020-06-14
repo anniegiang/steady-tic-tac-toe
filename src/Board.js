@@ -1,10 +1,9 @@
 import React from "react";
 import Square from "./Square";
-import "./index.css";
 
-const Board = ({ onClick, squares }) => {
+const Board = ({ handleClick, squares }) => {
   const renderSquare = (i) => {
-    return <Square value={squares[i]} onClick={() => onClick(i)} />;
+    return <Square value={squares[i]} handleClick={() => handleClick(i)} />;
   };
 
   return (
