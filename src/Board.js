@@ -1,28 +1,26 @@
 import React from "react";
 import Square from "./Square";
 
+const board = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+];
+
 const Board = ({ handleClick, squares }) => {
   const renderSquare = (i) => {
-    return <Square value={squares[i]} handleClick={() => handleClick(i)} />;
+    return (
+      <Square key={i} value={squares[i]} handleClick={() => handleClick(i)} />
+    );
   };
 
   return (
     <div>
-      <div className="board-row">
-        {renderSquare(0)}
-        {renderSquare(1)}
-        {renderSquare(2)}
-      </div>
-      <div className="board-row">
-        {renderSquare(3)}
-        {renderSquare(4)}
-        {renderSquare(5)}
-      </div>
-      <div className="board-row">
-        {renderSquare(6)}
-        {renderSquare(7)}
-        {renderSquare(8)}
-      </div>
+      {board.map((row, r) => (
+        <div className="board-row" key={r}>
+          {row.map((col) => renderSquare(col))}
+        </div>
+      ))}
     </div>
   );
 };
